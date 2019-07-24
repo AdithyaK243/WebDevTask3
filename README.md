@@ -11,4 +11,6 @@
 5.Download mongodb community edition from the official website <br>
 6.Make sure that mongodb is running and is listening on port 27017<br>
 7.Run the code using the command : `npm run dev` to run the code as nodemon is added as a dev dependency<br>
-8.Open a browser and navigate to http://localhost:3000/ to open the homepage of form creator<br>
+8.Open a browser and navigate to http://localhost:5000/ to open the homepage of form creator <br>
+
+The program will run on any other port if port 5000 is not available
