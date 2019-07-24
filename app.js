@@ -57,9 +57,7 @@ var upload = multer({ storage: storage });
 //Flash messages
 app.use(connectFlash());
 
-//=====================================================
-//Managing login/signup/logout system
-//=====================================================
+
 
 //Home page
 app.get('/', function(req, res){
@@ -181,9 +179,7 @@ function isLoggedIn(req,res,next){
     }
 }
 
-//=================================================
-//Dashboard to create/edit/delete forms
-//=================================================
+
 
 //Dashboard Page
 app.get('/dashboard', isLoggedIn, function(req, res) {
@@ -462,9 +458,6 @@ app.get('/form/create/', isLoggedIn, function(req, res){
     })
 });
 
-//====================================================
-//Create/Delete/Save questions
-//====================================================
 
 //save form's question edits
 app.post('/form/:fid/edit/save', urlEncodedParser, function(req, res){
@@ -594,9 +587,6 @@ app.get('/form/edit/:fid/question/delete/:qid', isLoggedIn, function(req, res){
     })
 });
 
-//=====================================================
-//Form response functions
-//=====================================================
 
 //Form response to be filled by other user 
 app.get('/form/:fid/fill/response', function(req, res, next){
@@ -722,5 +712,6 @@ app.post('/form/:fid/submit/response',upload.array('myFiles', 12) ,urlEncodedPar
 
 
 //listen to port
-app.listen(3000);
-console.log('listening to 3000');
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, console.log(`Server started on port ${PORT}`));
